@@ -4,16 +4,16 @@
     <root id="1">
       <ServerVersion>16.0</ServerVersion>
     </root>
-    <database id="2" parent="1" name="homechef">
+    <database id="2" parent="1" name="postgres"/>
+    <database id="3" parent="1" name="template1"/>
+    <database id="4" parent="1" name="template0"/>
+    <database id="5" parent="1" name="test"/>
+    <database id="6" parent="1" name="homechef">
       <Current>1</Current>
     </database>
-    <database id="3" parent="1" name="postgres"/>
-    <database id="4" parent="1" name="template0"/>
-    <database id="5" parent="1" name="template1"/>
-    <database id="6" parent="1" name="test"/>
-    <schema id="7" parent="2" name="information_schema"/>
-    <schema id="8" parent="2" name="pg_catalog"/>
-    <schema id="9" parent="2" name="public">
+    <schema id="7" parent="6" name="information_schema"/>
+    <schema id="8" parent="6" name="pg_catalog"/>
+    <schema id="9" parent="6" name="public">
       <Current>1</Current>
     </schema>
   </database-model>

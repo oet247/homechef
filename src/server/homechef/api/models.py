@@ -1,9 +1,10 @@
 from django.db import models
 
-
 # Create your models here.
 
-class Uchenik(models.Model):
-    uspeh = models.CharField(max_length=100)
-    creativnost = models.CharField(max_length=100)
-    potencial = models.CharField(max_length=100)
+
+class Test(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
