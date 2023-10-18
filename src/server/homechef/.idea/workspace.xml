@@ -5,13 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="730eaa09-b818-458d-9a21-a25c6db08514" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e494014-c27f-4411-8efe-a30ff6a8800e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3e494014-c27f-4411-8efe-a30ff6a8800e.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/migrations/0002_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/migrations/0002_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/wiz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/migrations/0002_remove_user_reg_token.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/user_Zqjrcma.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/wizard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/wizard_UZ3t7LD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/wizard_jEj1nJg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e494014-c27f-4411-8efe-a30ff6a8800e.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e494014-c27f-4411-8efe-a30ff6a8800e/storage_v2/_src_/database/homechef.JQEM4w.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e494014-c27f-4411-8efe-a30ff6a8800e/storage_v2/_src_/database/homechef.JQEM4w/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e494014-c27f-4411-8efe-a30ff6a8800e/storage_v2/_src_/database/homechef.JQEM4w/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d34827e3-2cd5-48fd-8930-3d829e7843b4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d34827e3-2cd5-48fd-8930-3d829e7843b4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homechef/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homechef/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homechef/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homechef/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +70,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectId" id="2WaGdBx7O1if1bvlRZT1lkMSPed" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -85,7 +130,11 @@
       <option name="presentableId" value="Default" />
       <updated>1696963362689</updated>
       <workItem from="1696963380923" duration="1648000" />
-      <workItem from="1697123507763" duration="3577000" />
+      <workItem from="1697123507763" duration="3619000" />
+      <workItem from="1697208726228" duration="4816000" />
+      <workItem from="1697469961670" duration="614000" />
+      <workItem from="1697546839953" duration="11086000" />
+      <workItem from="1697635675415" duration="8137000" />
     </task>
     <servers />
   </component>
@@ -102,5 +151,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

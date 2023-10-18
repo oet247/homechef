@@ -1,0 +1,111 @@
+Documentation
+
+user json
+
+wizz
+{
+  "full_name": "shadow wizard money gang",
+  "username": "wizard enjoyer 69420",
+  "email": "spammer@zoner.com",
+  "password": "Flamewave123",
+  "bio": "I like dart",
+  "birthday": "2015-05-15",
+  "profile_pic": "",
+  "followers": [],
+  "following": [],
+  "is_staff": false,
+  "is_superuser": false
+}
+
+robot
+{
+  "full_name": "robot",
+  "username": "command_mc_grab",
+  "email": "armor@grapplers.com",
+  "password": "IStepOnYou69",
+  "bio": "kill confirm is life",
+  "birthday": "1995-01-01",
+  "profile_pic": "",
+  "followers": [],
+  "following": [],
+  "is_staff": false,
+  "is_superuser": false
+}
+
+{
+  "full_name": "",
+  "username": "",
+  "email": "",
+  "password": "",
+  "bio": "",
+  "birthday": "",
+  "profile_pic": "",
+  "followers": [],
+  "following": [],
+  "is_staff": false,
+  "is_superuser": false
+}
+
+login json
+{
+  "username": "",
+  "password": ""
+}
+
+{
+  "username": "command_mc_grab",
+  "password": "IStepOnYou69"
+}
+
+{
+  "username": "",
+  "password": ""
+}
+
+create post json
+{
+  "author": ,
+  "image": "",
+  "caption": ""
+}
+
+
+# endpointove za user related operacii v /user
+
+login/
+post request s username i pass, loginva user
+
+logout/
+get request s pk na usera, logoutva user
+
+create/
+post request pravi user 
+
+get/
+get request s pk vzema public infoto na user razlichen ot lognatiq
+
+me/
+get request s pk vzema vsichkoto info za lognatiq user
+
+update/
+put request s pk updateva infoto na user
+
+follow/
+get request (mai?) s pkove na usera koito followva i biva follownat
+
+delete/
+delete request s pk deleteva user
+
+
+#endpointove za post related operacii v /post
+
+create/
+post request pravi post
+
+get/pk
+get r
+
+
+
+
+

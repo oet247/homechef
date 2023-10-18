@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+import user.apps
+
+AUTH_USER_MODEL = 'user.User'
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,7 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
-    "rest_framework"
+    "rest_framework",
+    "user.apps.UserConfig",
+    "post.apps.PostConfig",
+    "comment.apps.CommentConfig"
 ]
 
 MIDDLEWARE = [
