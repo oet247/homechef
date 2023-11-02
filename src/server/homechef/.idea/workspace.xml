@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="730eaa09-b818-458d-9a21-a25c6db08514" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/media/post_images/user_Zqjrcma.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/post.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../documentation/api.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../documentation/api.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/comment/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homechef/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homechef/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homechef/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homechef/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/post/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/post/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/wiz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/user_Zqjrcma.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/wizard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/wizard_UZ3t7LD.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/wizard_jEj1nJg.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +105,7 @@
       <workItem from="1698746369619" duration="2123000" />
       <workItem from="1698773880353" duration="2359000" />
       <workItem from="1698849246060" duration="6242000" />
-      <workItem from="1698944751931" duration="4814000" />
+      <workItem from="1698944751931" duration="5833000" />
     </task>
     <servers />
   </component>
