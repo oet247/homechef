@@ -2,13 +2,12 @@ from django.urls import path
 from user.views import (GetUserAPI,
                         GetMyProfileAPI,
                         CreateUserAPI,
-                        LoginUserAPI,
-                        LogoutUserAPI,
                         UpdateUserAPI,
                         UploadUserPicAPI,
                         FollowUserAPI,
-                        DeleteUserAPI,
+                        # DeleteUserAPI,
                         FeedAPI)
+from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
 
@@ -16,19 +15,11 @@ urlpatterns = [
          FeedAPI.as_view(),
          name='user_feed_api'),
 
-    path('login/',
-         LoginUserAPI.as_view(),
-         name='login_user_api'),
-
-    path('logout/<int:pk>/',
-         LogoutUserAPI.as_view(),
-         name='logout_user_api'),
-
     path('create/',
          CreateUserAPI.as_view(),
          name='create_user_api'),
 
-    path('get/<int:pk>/',
+    path('<int:pk>',
          GetUserAPI.as_view(),
          name='get_user_api'),
 
@@ -48,8 +39,15 @@ urlpatterns = [
          FollowUserAPI.as_view(),
          name='follow_user-api'),
 
-    path('delete/<int:pk>/',
-         DeleteUserAPI.as_view(),
-         name='delete_user_api'),
+    # path('delete/<int:pk>/',
+    #      DeleteUserAPI.as_view(),
+    #      name='delete_user_api'),
 
+    path('login/',
+         jwt_views.TokenObtainPairView.as_view(),
+         name='token_obtain_pair'),
+
+    path('login/refresh/',
+         jwt_views.TokenRefreshView.as_view(),
+         name='token_refresh')
 ]

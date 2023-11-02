@@ -32,6 +32,21 @@ robot
   "is_superuser": false
 }
 
+ninj
+{
+  "full_name": "shinobi supremacy",
+  "username": "pilebunker",
+  "email": "dash@rushdown.com",
+  "password": "Gluesnifflike",
+  "bio": "Make drop kick into uppercut true again",
+  "birthday": "2019-04-20",
+  "profile_pic": "",
+  "followers": [],
+  "following": [],
+  "is_staff": false,
+  "is_superuser": false
+}
+
 {
   "full_name": "",
   "username": "",

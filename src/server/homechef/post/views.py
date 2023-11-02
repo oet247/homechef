@@ -12,8 +12,10 @@ from rest_framework.generics import (  # CreateAPIView,
 from django.contrib.auth import get_user_model
 
 # Local Imports
-from post.serializers import PostSerializer
+from post.serializers import PostSerializer, CreatePostSerializer
 from post.models import Post
+
+import base64
 
 
 class CreatePostAPI(APIView):
@@ -24,13 +26,12 @@ class CreatePostAPI(APIView):
         except get_user_model().DoesNotExist:
             author = None
         if author is not None:
-            post = Post(
-                author=author,
-                image=request.FILES["image"],
-                caption=data.get('caption'),
-            )
-            post.save()
-            return Response(status=status.HTTP_201_CREATED)
+            serializer = CreatePostSerializer(data=request.data)
+            if serializer.is_valid():
+                post = serializer.save()
+                post.save()
+                return Response(status=status.HTTP_201_CREATED)
+            return Response(status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION, data=serializer.errors)
         return Response(status=status.HTTP_404_NOT_FOUND,
                         data={"error": "Invalid pk values"})
 
