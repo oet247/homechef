@@ -4,12 +4,12 @@ from comment.views import CreateCommentAPI, DeleteCommentAPI
 
 urlpatterns = [
 
-    path('create/<int:post_pk>/<int:req_user_pk>/',
+    path('create/',
          CreateCommentAPI.as_view(),
-         name='login_user_api'),
+         name='create_comment_api'),
 
-    path('delete/<int:pk>/',
+    path('delete/',
          DeleteCommentAPI.as_view(),
-         name='logout_user_api'),
+         name='delete_comment_api'),
 
 ]

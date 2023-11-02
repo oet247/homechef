@@ -5,10 +5,9 @@ from post.models import Post
 
 
 class CreateUserSerializer(serializers.ModelSerializer):
-    # create
     class Meta:
         model = get_user_model()
-        fields = ['email', 'full_name', 'username', 'birthday', 'password']
+        fields = ['email', 'username', 'password']
 
     def create(self, validated_data):
         user = super().create(validated_data)
@@ -17,27 +16,29 @@ class CreateUserSerializer(serializers.ModelSerializer):
         return user
 
 
+class UpdateUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = get_user_model()
+        fields = ['fullname', 'username', 'profile_pic', 'bio']
+
+
 class MiniUserSerializer(serializers.ModelSerializer):
-    # read
     class Meta:
         model = get_user_model()
         fields = ['pk', 'username', 'full_name', 'profile_pic']
 
 
 class PostSerializer(serializers.ModelSerializer):
-    # read
-    author = MiniUserSerializer(many=True)
+    author = MiniUserSerializer()
     likes = MiniUserSerializer(many=True)
-    tags = MiniUserSerializer(many=True)
 
     class Meta:
         model = Post
-        fields = ['pk', 'author', 'image', 'caption', 'location',
-                  'likes', 'likes_count', 'tags']
+        fields = ['pk', 'author', 'image', 'caption',
+                  'likes', 'likes_count']
 
 
 class UserSerializer(serializers.ModelSerializer):
-    # read
     followers = MiniUserSerializer(many=True)
     following = MiniUserSerializer(many=True)
 
@@ -53,7 +54,6 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class MyProfileSerializer(serializers.ModelSerializer):
-    # read update delete
     followers = MiniUserSerializer(many=True)
     following = MiniUserSerializer(many=True)
     posts = PostSerializer(many=True)
@@ -70,7 +70,6 @@ class MyProfileSerializer(serializers.ModelSerializer):
 
 
 class UploadUserPicSerializer(serializers.ModelSerializer):
-    # create, update
     class Meta:
         model = get_user_model()
         fields = ['profile_pic']

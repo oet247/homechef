@@ -5,59 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="730eaa09-b818-458d-9a21-a25c6db08514" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/comment/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comment/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comment/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comment/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comment/migrations/0002_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comment/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comment/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comment/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comment/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comment/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comment/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/migrations/0002_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/wiz.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/migrations/0002_remove_user_reg_token.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/user_Zqjrcma.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/wizard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/wizard_UZ3t7LD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/wizard_jEj1nJg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e494014-c27f-4411-8efe-a30ff6a8800e.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e494014-c27f-4411-8efe-a30ff6a8800e/storage_v2/_src_/database/homechef.JQEM4w.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e494014-c27f-4411-8efe-a30ff6a8800e/storage_v2/_src_/database/homechef.JQEM4w/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e494014-c27f-4411-8efe-a30ff6a8800e/storage_v2/_src_/database/homechef.JQEM4w/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d34827e3-2cd5-48fd-8930-3d829e7843b4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d34827e3-2cd5-48fd-8930-3d829e7843b4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/post_images/user_Zqjrcma.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/post.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../documentation/api.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../documentation/api.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/comment/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homechef/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homechef/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homechef/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homechef/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/post/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/post/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/wiz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/user_Zqjrcma.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/wizard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/wizard_UZ3t7LD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/wizard_jEj1nJg.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -84,6 +58,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/oet/Documents/prog/projects/homechef/src/server/homechef/post&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -96,6 +71,11 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\oet\Documents\prog\projects\homechef\src\server\homechef\post" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="homechef" type="Python.DjangoServer" factoryName="Django server">
       <module name="homechef" />
@@ -134,7 +114,16 @@
       <workItem from="1697208726228" duration="4816000" />
       <workItem from="1697469961670" duration="614000" />
       <workItem from="1697546839953" duration="11086000" />
-      <workItem from="1697635675415" duration="8137000" />
+      <workItem from="1697635675415" duration="8693000" />
+      <workItem from="1697721957969" duration="6992000" />
+      <workItem from="1698255359465" duration="3189000" />
+      <workItem from="1698342773998" duration="2004000" />
+      <workItem from="1698430772393" duration="2701000" />
+      <workItem from="1698591809791" duration="904000" />
+      <workItem from="1698746369619" duration="2123000" />
+      <workItem from="1698773880353" duration="2359000" />
+      <workItem from="1698849246060" duration="6242000" />
+      <workItem from="1698944751931" duration="4814000" />
     </task>
     <servers />
   </component>

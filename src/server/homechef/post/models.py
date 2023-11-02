@@ -10,7 +10,8 @@ class Post(models.Model):
                                related_name='Owner',
                                on_delete=models.CASCADE)
     image = models.ImageField('Image',
-                              upload_to='post/')
+                              upload_to='post_images/',
+                              default="post/post.png")
     posted_time = models.DateTimeField('Post_posted_time', auto_now_add=True)
     caption = models.CharField('Caption', max_length=50, blank=True)
     likes = models.ManyToManyField(settings.AUTH_USER_MODEL,
