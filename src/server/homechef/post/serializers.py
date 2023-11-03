@@ -12,7 +12,7 @@ class CreatePostSerializer(serializers.ModelSerializer):
 class PostAuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
-        fields = ['pk', 'username', 'full_name', 'profile_pic']
+        fields = ['pk', 'username', 'profile_pic']
 
 
 class PostSerializer(serializers.ModelSerializer):

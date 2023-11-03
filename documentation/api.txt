@@ -1,52 +1,42 @@
-Documentation
+## Documentation
+## /user
 
-user json
-
-wizz
+- /user/login/ 
+	- POST
+	- logva user
+```json
 {
-  "full_name": "shadow wizard money gang",
-  "username": "wizard enjoyer 69420",
-  "email": "spammer@zoner.com",
-  "password": "Flamewave123",
-  "bio": "I like dart",
-  "birthday": "2015-05-15",
-  "profile_pic": "",
-  "followers": [],
-  "following": [],
-  "is_staff": false,
-  "is_superuser": false
+"username": "",
+"password": ""
 }
-
-robot
+```
+- vrushta json s access i refresh jwt tokeni koito pazish v cookie
+```json
 {
-  "full_name": "robot",
-  "username": "command_mc_grab",
-  "email": "armor@grapplers.com",
-  "password": "IStepOnYou69",
-  "bio": "kill confirm is life",
-  "birthday": "1995-01-01",
-  "profile_pic": "",
-  "followers": [],
-  "following": [],
-  "is_staff": false,
-  "is_superuser": false
+"access": "",
+"refresh": ""
 }
+```
 
-ninj
+- /user/logout/ - **TODO**
+	- GET
+	- logoutva user ako e loginnat
+
+- /user/create
+	- POST 
+	- Pravi user
+```json
 {
-  "full_name": "shinobi supremacy",
-  "username": "pilebunker",
-  "email": "dash@rushdown.com",
-  "password": "Gluesnifflike",
-  "bio": "Make drop kick into uppercut true again",
-  "birthday": "2019-04-20",
-  "profile_pic": "",
-  "followers": [],
-  "following": [],
-  "is_staff": false,
-  "is_superuser": false
+"email": "",
+"username": "",
+"password": ""
 }
+```
 
+- /user/:id
+	- GET
+	- Vrushta user
+```json
 {
   "full_name": "",
   "username": "",
@@ -54,73 +44,129 @@ ninj
   "password": "",
   "bio": "",
   "birthday": "",
-  "profile_pic": "",
+  "profile_pic": ,
   "followers": [],
   "following": [],
   "is_staff": false,
-  "is_superuser": false
+  "is_superuser": false,
+  "followers_count": ,
+  "follwowing_count": ,
+  "posts": [],
+  "post_count": ,
+  "saved_posts": []
 }
+```
 
-login json
+- /user/update/:id - **TODO**
+	- PUT
+	- updateva user
+
+- /user/delete/:id - **TODO**
+	- DELETE
+	- deleteva user
+
+- /user/follow/ - **TODO**
+	- POST
+	- pravi user da followva drug user
+	- potencialen implementation - 
+```json
 {
-  "username": "",
-  "password": ""
+//funnny way to name a person getting followed btw
+"folowee": //id
 }
+```
+- /user/feed/
+	- GET
+	- vrushta feed s vsichki postove na useri koito user sledva i gi podrejda po ordered
+	- ne znam kakuv json vrushta trqbva da vidq XD
 
+## /post
+
+- /post/:id
+	- GET
+	- Vrushta post po id
+```json
 {
-  "username": "command_mc_grab",
-  "password": "IStepOnYou69"
+"author": {
+	"pk": ,
+	"username": "",
+	"profile_pic": 
+},
+"image": ,
+"posted_time": "",
+"caption": "",
+"likes": [],
+"saves": []
+"comments": [],
+"likes_count": ,
 }
+```
 
+- /post/create
+	- POST
+	- pravi post
+```json
 {
-  "username": "",
-  "password": ""
+"author": ,
+"image": ,
+"caption": ""
 }
+```
 
-create post json
+- /post/update/:id - **TODO**
+	- PUT
+	- updateva post
+
+- /post/delete/:id - **TODO**
+	- DELETE
+	- trie post
+
+- /post/like/:id - **TODO**
+	- POST
+	- pravi user da likene post
+	- potencialen implementation - usera e ot tokena post a drugoto e ot jsona
+```json
 {
-  "author": ,
-  "image": "",
-  "caption": ""
+"post_id": 
 }
+```
 
+- /post/save/:id
+	- POST
+	- pravi user da dpbavi post kum savenati postove
+	- absolutno sushtoto kato gornoto kato logika
+	- potencialen implementation - usera e ot tokena post a drugoto e ot jsona
+```json
+{
+"post_id":
+}
+```
 
-# endpointove za user related operacii v /user
+## /comment
 
-login/
-post request s username i pass, loginva user
+- /comment/create
+	- POST
+	- pravi comment kum specifichen post
+```json
+{
+"author": ,
+"post": ,
+"content": ""
+}
+```
 
-logout/
-get request s pk na usera, logoutva user
+- /comment/:id
+	- GET
+	- vrushta comment po id
+```json
+{
+"author": ,
+"post": ,
+"content": "",
+"posted_time": ""
+}
+```
 
-create/
-post request pravi user 
-
-get/
-get request s pk vzema public infoto na user razlichen ot lognatiq
-
-me/
-get request s pk vzema vsichkoto info za lognatiq user
-
-update/
-put request s pk updateva infoto na user
-
-follow/
-get request (mai?) s pkove na usera koito followva i biva follownat
-
-delete/
-delete request s pk deleteva user
-
-
-#endpointove za post related operacii v /post
-
-create/
-post request pravi post
-
-get/pk
-get r
-
-
-
-
-
+- /comment/delete/:id - TODO
+	- DELETE
+	- trie post po id
