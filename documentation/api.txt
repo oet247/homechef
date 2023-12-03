@@ -18,6 +18,16 @@
 }
 ```
 
+- /user/login/refresh
+	- POST
+	- refreshva jwt token i vrushta nov access pair
+```json
+{
+"access": "",
+"refresh": ""
+}
+```
+
 - /user/logout/ - **TODO**
 	- GET
 	- logoutva user ako e loginnat

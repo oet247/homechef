@@ -1,12 +1,12 @@
 from rest_framework import status
 from rest_framework import permissions
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.generics import RetrieveAPIView, UpdateAPIView, CreateAPIView
 from rest_framework.views import APIView
 
-
 from django.contrib.auth import get_user_model, authenticate, login, logout
-
+from rest_framework_simplejwt.tokens import RefreshToken
 
 from post.serializers import PostSerializer
 from user.serializers import (CreateUserSerializer,
@@ -42,9 +42,9 @@ class GetMyProfileAPI(RetrieveAPIView):
     queryset = get_user_model().objects.all()
 
 
-class UpdateUserAPI(UpdateAPIView):
-    serializer_class = UserSerializer
-    queryset = get_user_model().objects.all()
+class UpdateUserAPI(APIView):
+    def patch(self, request, *args, **kwargs):
+        return
 
 
 class UploadUserPicAPI(UpdateAPIView):
@@ -106,3 +106,15 @@ class FeedAPI(APIView):
             return Response(status=status.HTTP_200_OK, data=serializer.data)
         return Response(status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION,
                         data={"error": "Invalid credentials"})
+
+
+class LogoutView(APIView):
+
+    def post(self, request):
+        try:
+            refresh_token = request.data["refresh_token"]
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            return Response(status=status.HTTP_205_RESET_CONTENT)
+        except Exception as e:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
