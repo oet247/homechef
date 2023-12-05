@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="730eaa09-b818-458d-9a21-a25c6db08514" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/post/migrations/0003_alter_post_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/Registration.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/components/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/logout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/navigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/registration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/interceptors/axios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d34827e3-2cd5-48fd-8930-3d829e7843b4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d34827e3-2cd5-48fd-8930-3d829e7843b4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homechef/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homechef/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +40,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2WaGdBx7O1if1bvlRZT1lkMSPed" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -40,7 +58,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/oet/Documents/prog/projects/homechef/src/server/homechef/post&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Important stuff/Coding/Projects/homechefgit/homechef/src/server/homechef&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -65,6 +84,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="homechef.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -106,6 +126,9 @@
       <workItem from="1698773880353" duration="2359000" />
       <workItem from="1698849246060" duration="6242000" />
       <workItem from="1698944751931" duration="5833000" />
+      <workItem from="1698956420416" duration="650000" />
+      <workItem from="1699473090545" duration="1575000" />
+      <workItem from="1701624218506" duration="4775000" />
     </task>
     <servers />
   </component>
@@ -125,5 +148,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/user/views.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
