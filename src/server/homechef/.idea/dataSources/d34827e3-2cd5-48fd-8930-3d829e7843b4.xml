@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="homechef@localhost">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.48">
-    <root id="1">
-      <ServerVersion>16.0</ServerVersion>
-    </root>
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
+    <root id="1"/>
     <database id="2" parent="1" name="postgres"/>
     <database id="3" parent="1" name="template1"/>
     <database id="4" parent="1" name="template0"/>

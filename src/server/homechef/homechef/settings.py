@@ -74,6 +74,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware'
+
 ]
 
 ROOT_URLCONF = 'homechef.urls'
@@ -106,7 +107,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "homechef",
         "USER": "postgres",
-        "PASSWORD": "oet",
+        "PASSWORD": "hui",
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }

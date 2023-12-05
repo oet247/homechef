@@ -15,7 +15,7 @@ export const Login = () => {
     };
 
     try {
-      const { data } = await axios.post('http://localhost:8000/token/', user, {
+      const { data } = await axios.post('http://localhost:8000/user/login/', user, {
         headers: {
           'Content-Type': 'application/json'
         },

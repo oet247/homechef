@@ -1,4 +1,5 @@
 import axios from "axios";
+
 let refresh = false;
 
 axios.interceptors.response.use(
@@ -9,7 +10,7 @@ axios.interceptors.response.use(
       console.log(localStorage.getItem('refresh_token'));
 
       const response = await axios.post(
-        'http://localhost:8000/token/refresh/',
+        'http://localhost:8000/user/login/refresh/',
         {
           refresh: localStorage.getItem('refresh_token'),
         },
@@ -17,33 +18,14 @@ axios.interceptors.response.use(
           headers: {
             'Content-Type': 'application/json',
           },
-          withCredentials: true,
-        }
+        },
+        { withCredentials: true }
       );
 
       if (response.status === 200) {
         axios.defaults.headers.common['Authorization'] = `Bearer ${response.data['access']}`;
         localStorage.setItem('access_token', response.data.access);
         localStorage.setItem('refresh_token', response.data.refresh);
-        return axios(error.config);
-      }
-    } else if (error.response.status === 403) {
-      const registrationResponse = await axios.post(
-        'http://localhost:8000/register/',
-        {
-          email: 'your_email',
-          username: 'your_username',
-          password: 'your_password',
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          withCredentials: true,
-        }
-      );
-
-      if (registrationResponse.status === 201) {
         return axios(error.config);
       }
     }
