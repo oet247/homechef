@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="730eaa09-b818-458d-9a21-a25c6db08514" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/post/migrations/0003_alter_post_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/Login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/Registration.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/components/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/logout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/navigation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/registration.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/interceptors/axios.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d34827e3-2cd5-48fd-8930-3d829e7843b4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d34827e3-2cd5-48fd-8930-3d829e7843b4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/components/navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/components/registration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homechef/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homechef/settings.py" afterDir="false" />
     </list>
@@ -129,6 +117,10 @@
       <workItem from="1698956420416" duration="650000" />
       <workItem from="1699473090545" duration="1575000" />
       <workItem from="1701624218506" duration="4775000" />
+      <workItem from="1701800267071" duration="333000" />
+      <workItem from="1701884764074" duration="2419000" />
+      <workItem from="1702321457797" duration="606000" />
+      <workItem from="1702410435607" duration="305000" />
     </task>
     <servers />
   </component>

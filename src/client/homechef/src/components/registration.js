@@ -10,7 +10,7 @@ function Registration() {
   const handleRegistration = async () => {
     try {
       const response = await axios.post(
-        'http://localhost:8000/register/',
+        'http://localhost:8000/user/create/',
         {
           email: email,
           username: username,
