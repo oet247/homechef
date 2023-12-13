@@ -11,8 +11,18 @@ export const ProfilePage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      
+      const profileData ={
+        full_name:full_name,
+        username:username,
+        email:email,
+        password:password,
+        bio:bio,
+        birthday:birthday
+      }
+      
       try {
-        const response = await axios.get(`/user/me/1`);
+        const response = await axios.get(`http://localhost:8000/user/3`);
         const profileData = response.data;
 
         setFullName(profileData.full_name);

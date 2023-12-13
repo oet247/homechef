@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="730eaa09-b818-458d-9a21-a25c6db08514" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/components/navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/components/registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/profilepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/components/profilepage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homechef/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homechef/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +118,8 @@
       <workItem from="1701800267071" duration="333000" />
       <workItem from="1701884764074" duration="2419000" />
       <workItem from="1702321457797" duration="606000" />
-      <workItem from="1702410435607" duration="305000" />
+      <workItem from="1702410435607" duration="731000" />
+      <workItem from="1702495848156" duration="690000" />
     </task>
     <servers />
   </component>

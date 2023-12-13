@@ -4,7 +4,7 @@ import './Registration.css';
 
 function Registration() {
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState(''); // Add email state
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleRegistration = async () => {
