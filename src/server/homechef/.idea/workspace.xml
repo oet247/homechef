@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="730eaa09-b818-458d-9a21-a25c6db08514" name="Changes" comment="Changes">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d34827e3-2cd5-48fd-8930-3d829e7843b4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d34827e3-2cd5-48fd-8930-3d829e7843b4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/components/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/components/navigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +130,7 @@
       <workItem from="1702495848156" duration="690000" />
       <workItem from="1703430723863" duration="1781000" />
       <workItem from="1703433093323" duration="905000" />
-      <workItem from="1703535043643" duration="2240000" />
+      <workItem from="1703535043643" duration="2833000" />
     </task>
     <servers />
   </component>

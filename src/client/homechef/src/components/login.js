@@ -5,6 +5,7 @@ import "./Login.css"
 export const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,7 +29,7 @@ export const Login = () => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${data['access']}`;
       window.location.href = '/';
     } catch (error) {
-      // Handle error here
+      setError('Username or password is incorrect');
       console.error(error);
     }
   }
@@ -38,6 +39,7 @@ export const Login = () => {
       <form className="auth-form" onSubmit={handleSubmit}>
         <div className="auth-form-content">
           <h3 className="auth-form-title">Sign In</h3>
+          {error && <p className="error">{error}</p>}
           <div className="form-group mt-3">
             <label htmlFor="username">Username</label>
             <input

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,700&display=swap');
+
+.navBar{
+    height: 56px;
+    background-color: #242526;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.form{
+    display: inline-block;
+    margin-left: auto;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+.navText{
+    color: whitesmoke;
+    font-weight: bold;
+    font-family:'DM Sans', Arial;
+    text-decoration: none;
+    padding-right: 10px;
+}
+.navBox{
+    display: inline-block;
+}
