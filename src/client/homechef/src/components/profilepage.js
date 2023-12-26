@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 
 export const ProfilePage = () => {
   const [full_name, setFullName] = useState('');
@@ -8,6 +9,9 @@ export const ProfilePage = () => {
   const [password, setPassword] = useState('');
   const [bio, setBio] = useState('');
   const [birthday, setBirthday] = useState('');
+
+  const authorizationToken = localStorage.getItem("access_token");
+  const decoded = jwtDecode(authorizationToken);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,7 +26,7 @@ export const ProfilePage = () => {
       }
       
       try {
-        const response = await axios.get(`http://localhost:8000/user/3`);
+        const response = await axios.get(`http://localhost:8000/user/${decoded.user_id}`);
         const profileData = response.data;
 
         setFullName(profileData.full_name);
