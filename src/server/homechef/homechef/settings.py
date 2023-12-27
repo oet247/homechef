@@ -16,7 +16,8 @@ import user.apps
 
 AUTH_USER_MODEL = 'user.User'
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 REST_FRAMEWORK = {
      'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -74,7 +75,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware'
-
 ]
 
 ROOT_URLCONF = 'homechef.urls'
