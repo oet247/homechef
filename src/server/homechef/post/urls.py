@@ -8,11 +8,11 @@ from post.views import (CreatePostAPI,
 
 urlpatterns = [
 
-    path('create/',
+    path('create/<int:pk>/',
          CreatePostAPI.as_view(),
          name='create_post_api'),
 
-    path('get/<int:pk>/',
+    path('<int:pk>',
          GetPostAPI.as_view(),
          name='create_post_api'),
 

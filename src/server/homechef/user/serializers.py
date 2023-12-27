@@ -19,7 +19,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
 class UpdateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
-        fields = ['fullname', 'username', 'profile_pic', 'bio', 'birthday']
+        fields = ['full_name', 'username', 'profile_pic', 'bio', 'birthday']
 
 
 class MiniUserSerializer(serializers.ModelSerializer):

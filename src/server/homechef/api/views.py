@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from rest_framework.generics import RetrieveAPIView
+from rest_framework.permissions import AllowAny
 
 
 # Create your views here.
@@ -18,3 +20,4 @@ def login_test(request):
 @login_required
 def logout_test(request):
     return HttpResponse("you have logged out like what???")
+

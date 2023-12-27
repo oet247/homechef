@@ -1,12 +1,13 @@
 from django.urls import path
+from rest_framework_simplejwt.views import TokenBlacklistView
+
 from user.views import (GetUserAPI,
                         GetMyProfileAPI,
                         CreateUserAPI,
                         UpdateUserAPI,
                         UploadUserPicAPI,
                         FollowUserAPI,
-                        # DeleteUserAPI,
-                        FeedAPI)
+                        FeedAPI, DeleteUserAPI, Test)
 from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
@@ -39,9 +40,9 @@ urlpatterns = [
          FollowUserAPI.as_view(),
          name='follow_user-api'),
 
-    # path('delete/<int:pk>/',
-    #      DeleteUserAPI.as_view(),
-    #      name='delete_user_api'),
+    path('delete/<int:pk>/',
+         DeleteUserAPI.as_view(),
+         name='delete_user_api'),
 
     path('login/',
          jwt_views.TokenObtainPairView.as_view(),
@@ -49,5 +50,10 @@ urlpatterns = [
 
     path('login/refresh/',
          jwt_views.TokenRefreshView.as_view(),
-         name='token_refresh')
+         name='token_refresh'),
+    path('logout/',
+         TokenBlacklistView.as_view(),
+         name='token_blacklist'),
+    path('test/', Test.as_view(),
+         name='test')
 ]
