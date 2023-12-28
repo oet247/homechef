@@ -17,10 +17,8 @@ import user.apps
 AUTH_USER_MODEL = 'user.User'
 
 CORS_ALLOW_ALL_ORIGINS = True
-<<<<<<< Updated upstream
 CORS_ALLOW_CREDENTIALS = True
-=======
->>>>>>> Stashed changes
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [

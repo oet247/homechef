@@ -6,39 +6,43 @@ function Registration() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleRegistration = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const user = {
+      email: email,
+      username: username,
+      password: password,
+    };
+
     try {
-      const response = await axios.post(
-        'http://localhost:8000/user/create/',
-        {
-          email: email,
-          username: username,
-          password: password,
-        },
-        {
+      const response = await axios.post('http://localhost:8000/user/create/', user,{
           headers: {
             'Content-Type': 'application/json',
           },
           withCredentials: true,
         }
       );
-  
+
       if (response.status === 201) {
         console.log('Registration successful!');
-        window.location = '/login';
+      }
+      if (response.status === 203) {
+        setError('Enter valid email address!')
       }
     } catch (error) {
       console.error('Registration error:', error);
     }
   };
-  
 
   return (
     <div className="registration-container">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
-        <h2>Registration</h2>
+        <h3>Registration</h3>
+        {error && <p className="error">{error}</p>}
           <div className="input-container">
             <label>Username:</label>
             <input
@@ -66,7 +70,7 @@ function Registration() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button onClick={handleRegistration}>Register</button>
+          <button>Register</button>
         </div>
       </form>
     </div>

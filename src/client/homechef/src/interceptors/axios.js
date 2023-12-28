@@ -7,7 +7,6 @@ axios.interceptors.response.use(
   async (error) => {
     if (error.response.status === 401 && !refresh) {
       refresh = true;
-      console.log(localStorage.getItem('refresh_token'));
 
       const response = await axios.post(
         'http://localhost:8000/user/login/refresh/',
@@ -16,7 +15,7 @@ axios.interceptors.response.use(
         },
         {
           headers: {
-            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authorizationToken}`,
           },
         },
         { withCredentials: true }

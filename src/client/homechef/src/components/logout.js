@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 
 export const Logout = () => {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await axios.post(
-          'http://localhost:8000/logout/',
+        await axios.get(
+          'http://localhost:8000/user/logout/',
           {
             refresh_token: localStorage.getItem('refresh_token')
           },
           {
             headers: {
-              'Content-Type': 'application/json'
+              'Authorization': `Bearer localStorage.getItem('access_token')`
             },
             withCredentials: true
           }

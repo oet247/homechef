@@ -8,10 +8,5 @@
     <database id="5" parent="1" name="homechef">
       <Current>1</Current>
     </database>
-    <schema id="6" parent="5" name="information_schema"/>
-    <schema id="7" parent="5" name="pg_catalog"/>
-    <schema id="8" parent="5" name="public">
-      <Current>1</Current>
-    </schema>
   </database-model>
 </dataSource>
