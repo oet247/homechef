@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import {jwtDecode} from "jwt-decode";
+import { useUserId } from './customhooks/userIDHook';
 
 export const ProfilePage = () => {
   const [full_name, setFullName] = useState('');
@@ -10,26 +10,25 @@ export const ProfilePage = () => {
   const [bio, setBio] = useState('');
   const [birthday, setBirthday] = useState('');
 
-  useEffect(() => {
-    const authorizationToken = localStorage.getItem("access_token");
-    const decoded = jwtDecode(authorizationToken);
+  const { userId } = useUserId();
 
+  useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/user/${decoded.user_id}`, {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/user/${userId}`, {
           headers: {
-            'Authorization': `Bearer ${authorizationToken}`
+            'Authorization': `Bearer ${localStorage.getItem('access_token')}`
           }
         });
         const profileData = response.data;
 
         if (profileData) {
-          setFullName(profileData.full_name || '');
-          setUsername(profileData.username || '');
-          setEmail(profileData.email || '');
-          setPassword(profileData.password || '');
-          setBio(profileData.bio || '');
-          setBirthday(profileData.birthday || '');
+          setFullName(profileData.full_name);
+          setUsername(profileData.username);
+          setEmail(profileData.email);
+          setPassword(profileData.password);
+          setBio(profileData.bio);
+          setBirthday(profileData.birthday);
         } else {
           console.error('No profile data returned from API');
         }
@@ -39,7 +38,7 @@ export const ProfilePage = () => {
     };
 
     fetchData();
-  }, []);
+  }, [userId]);
 
   return (
     <div>

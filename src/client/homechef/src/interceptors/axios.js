@@ -9,13 +9,13 @@ axios.interceptors.response.use(
       refresh = true;
 
       const response = await axios.post(
-        'http://localhost:8000/user/login/refresh/',
+        `${process.env.REACT_APP_API_URL}/user/login/refresh/`,
         {
           refresh: localStorage.getItem('refresh_token'),
         },
         {
           headers: {
-            'Authorization': `Bearer ${authorizationToken}`,
+            'Authorization': `Bearer ${localStorage.getItem('access_token')}`
           },
         },
         { withCredentials: true }

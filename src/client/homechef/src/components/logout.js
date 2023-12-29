@@ -6,7 +6,7 @@ export const Logout = () => {
     (async () => {
       try {
         await axios.get(
-          'http://localhost:8000/user/logout/',
+          `${process.env.REACT_APP_API_URL}/user/logout/`,
           {
             refresh_token: localStorage.getItem('refresh_token')
           },
@@ -27,7 +27,4 @@ export const Logout = () => {
     })();
   }, []);
 
-  return (
-    <div></div>
-  );
 }

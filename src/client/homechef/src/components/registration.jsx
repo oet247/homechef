@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Registration.css';
 
-function Registration() {
+export const Registration = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +21,7 @@ function Registration() {
     };
 
     try {
-      const response = await axios.post('http://localhost:8000/user/create/', user,{
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/user/create/`, user,{
           headers: {
             'Content-Type': 'application/json',
           },
@@ -28,6 +31,7 @@ function Registration() {
 
       if (response.status === 201) {
         console.log('Registration successful!');
+        navigate('/');
       }
       if (response.status === 203) {
         setError('Enter valid email address!')
@@ -76,5 +80,3 @@ function Registration() {
     </div>
   );
 }
-
-export default Registration;
