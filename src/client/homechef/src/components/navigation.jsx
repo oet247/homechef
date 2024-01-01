@@ -29,7 +29,6 @@ export function Navigation() {
                 {!isAuth ? <Nav.Link className='navText' href="/registration">REGISTER</Nav.Link> : null}
               </Nav>
             </div>
-            
         </div>
       );
 }

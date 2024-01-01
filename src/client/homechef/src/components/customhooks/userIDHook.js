@@ -1,22 +1,32 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import {jwtDecode} from 'jwt-decode';
 
 const UserIdContext = createContext();
 
 export const UserIdProvider = ({ children }) => {
-  const [userId, setUserId] = useState(() => {
-    const jwt = localStorage.getItem('access_token');
+  const [userId, setUserId] = useState(null);
+  const [error, setError] = useState(null);
 
-    if (jwt) {
-      const decoded = jwtDecode(jwt);
-      return decoded.user_id;
-    }
+  useEffect(() => {
+    const setUserIdFromToken = async () => {
+      try {
+        const jwt = localStorage.getItem('access_token');
 
-    return null;
-  });
+        if (jwt) {
+          const decoded = jwtDecode(jwt);
+          setUserId(decoded.user_id);
+        }
+      } catch (error) {
+        console.error('Invalid JWT token', error);
+        setError('Invalid JWT token');
+      }
+    };
+
+    setUserIdFromToken();
+  }, []);
 
   return (
-    <UserIdContext.Provider value={{ userId, setUserId }}>
+    <UserIdContext.Provider value={{ userId, setUserId, error }}>
       {children}
     </UserIdContext.Provider>
   );

@@ -1,6 +1,7 @@
 import {useState} from "react";
 import axios from 'axios';
 import { useUserId } from './customhooks/userIDHook';
+import './universalFormStyle.css'
 
 export const AdditionalInfo = () => {
     const [full_name, setFullName] = useState('');
@@ -45,8 +46,8 @@ export const AdditionalInfo = () => {
         }
 
         try {
-            const response = await axios.patch(
-                `${process.env.REACT_APP_API_URL}/user/${userId}`,
+            const response = await axios.put(
+                `${process.env.REACT_APP_API_URL}/user/update/${userId}`,
                 {
                     full_name: full_name,
                     bio: bio,
@@ -62,52 +63,75 @@ export const AdditionalInfo = () => {
 
             if (response.status === 200) {
                 console.log('successful');
-                window.location.href = '/login';
+                window.location.href = '/profilepage';
             }
         } catch (error) {
-            console.error('Registration error:', error);
+            if (error.response) {
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
+              } else if (error.request) {
+                console.log(error.request);
+              } else {
+                console.log('Error', error.message);
+              }
+              console.error('Additional info error:', error);
         }
     }
 
     return (
-        <div className="registration-container">
-            <form onSubmit={handleAdditionalInfo}>
+        <div className="wrapper">
+            <div className="logoAndMoto">
                 <div>
-                    <h3>AdditionalInfo</h3>
-                    {error && <p>{error}</p>} 
-                    <div className="input-container">
-                        <label>Full name:</label>
-                        <input
-                            type="text"
-                            placeholder="Full name"
-                            value={full_name}
-                            onChange={(e) => setFullName(e.target.value)}
-                        />
-                    </div>
-                    <div className="input-container">
-                        <label>Bio:</label>
-                        <input
-                            type="text"
-                            placeholder="bio"
-                            value={bio}
-                            onChange={(e) => setBio(e.target.value)}
-                        />
-                    </div>
-                    <div className="input-container">
-                        <label>Birthday:</label>
-                        <input
-                            type="date"
-                            placeholder="birthday"
-                            value={birthday}
-                            onChange={(e) => {
-                                setBirthday(e.target.value);
-                                setError('');
-                            }}
-                        />
-                    </div>
-                    <button>Next</button>
+                <img className="logo" src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="logo" width={500} height={187}/>
                 </div>
-            </form>
+                <div className='moto'><p>The ultimate kitchen hack.</p></div>
+        </div>
+            <div className="form-container">
+                <form className="form" onSubmit={handleAdditionalInfo}>
+                    <div className="form-content">
+                        <h3 className="form-title">Additional Info</h3>
+                        <p className={`error ${error ? 'visible' : 'hidden'}`}>{error}</p>
+                        <div className="form-group">
+                            <label>Full name:</label>
+                            <input
+                                className="form-control"
+                                type="text"
+                                placeholder="Full name"
+                                value={full_name}
+                                onChange={(e) => setFullName(e.target.value)}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Bio:</label>
+                            <input
+                                className="form-control"
+                                type="text"
+                                placeholder="bio"
+                                value={bio}
+                                onChange={(e) => setBio(e.target.value)}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Birthday:</label>
+                            <input
+                                className="form-control"
+                                type="date"
+                                placeholder="birthday"
+                                value={birthday}
+                                onChange={(e) => {
+                                    setBirthday(e.target.value);
+                                    setError('');
+                                }}
+                            />
+                        </div>
+                        <div className='form-group'>
+                            <button className='btn'>Next</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
         </div>
     );
 }
