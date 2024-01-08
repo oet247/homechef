@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from rest_framework import status
 from rest_framework import permissions
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -7,6 +8,7 @@ from rest_framework.views import APIView
 
 from django.contrib.auth import get_user_model, authenticate, login, logout
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 from post.serializers import PostSerializer
 from user.serializers import (CreateUserSerializer,
@@ -34,14 +36,21 @@ class GetUserAPI(RetrieveAPIView):
     queryset = get_user_model().objects.all()
 
 
-class GetMyProfileAPI(RetrieveAPIView):
-    serializer_class = MyProfileSerializer
-    queryset = get_user_model().objects.all()
+class GetMyProfileAPI(APIView):
+    def get(self, request):
+        user = get_user_model().objects.get(id=self.request.user.id)
+        serializer = MyProfileSerializer(user)
+        return JsonResponse(serializer.data)
 
 
 class UpdateUserAPI(UpdateAPIView):
-    serializer_class = UpdateUserSerializer
-    queryset = get_user_model().objects.all()
+    def patch(self, request):
+        user = request.user
+        serializer = UpdateUserSerializer(user, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 class DeleteUserAPI(DestroyAPIView):
@@ -56,21 +65,18 @@ class UploadUserPicAPI(UpdateAPIView):
 
 class FollowUserAPI(APIView):
     def get(self, request, *args, **kwargs):
+        following_user = request.user
         try:
-            req_user = get_user_model().objects.get(pk=kwargs['req_user_pk'])
+            user_getting_followed = get_user_model().objects.get(pk=kwargs['pk'])
         except get_user_model().DoesNotExist:
-            req_user = None
-        try:
-            ig_user = get_user_model().objects.get(pk=kwargs['ig_user_pk'])
-        except get_user_model().DoesNotExist:
-            ig_user = None
-        if req_user is not None and ig_user is not None:
-            if req_user in ig_user.followers.all():
-                ig_user.followers.remove(req_user)
-                req_user.following.remove(ig_user)
+            user_getting_followed = None
+        if user_getting_followed is not None:
+            if following_user in user_getting_followed.followers.all():
+                user_getting_followed.followers.remove(following_user)
+                following_user.following.remove(user_getting_followed)
             else:
-                ig_user.followers.add(req_user)
-                req_user.following.add(ig_user)
+                user_getting_followed.followers.add(following_user)
+                following_user.following.add(user_getting_followed)
             return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -97,3 +103,4 @@ class Test(APIView):
         user = get_user_model().objects.get(id=self.request.user.id)
         serializer = UserSerializer(user)
         return Response(serializer.data)
+

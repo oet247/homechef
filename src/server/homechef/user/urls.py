@@ -24,11 +24,11 @@ urlpatterns = [
          GetUserAPI.as_view(),
          name='get_user_api'),
 
-    path('me/<int:pk>/',
+    path('me/',
          GetMyProfileAPI.as_view(),
          name='get_user_api'),
 
-    path('update/<int:pk>/',
+    path('update/',
          UpdateUserAPI.as_view(),
          name='update_user_api'),
 
@@ -36,7 +36,7 @@ urlpatterns = [
          UploadUserPicAPI.as_view(),
          name='upload_user_pic_api'),
 
-    path('follow/<int:req_user_pk>/<int:ig_user_pk>/',
+    path('follow/<int:pk>/',
          FollowUserAPI.as_view(),
          name='follow_user-api'),
 

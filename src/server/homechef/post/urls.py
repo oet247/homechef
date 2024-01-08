@@ -8,7 +8,7 @@ from post.views import (CreatePostAPI,
 
 urlpatterns = [
 
-    path('create/<int:pk>/',
+    path('create/',
          CreatePostAPI.as_view(),
          name='create_post_api'),
 
@@ -24,11 +24,11 @@ urlpatterns = [
          DeletePostAPI.as_view(),
          name='create_post_api'),
 
-    path('like/<int:req_user_pk>/<int:post_pk>/',
+    path('like/<int:post_pk>/',
          LikePostAPI.as_view(),
          name='create_post_api'),
 
-    path('save/<int:req_user_pk>/<int:post_pk>/',
+    path('save/<int:post_pk>/',
          SavePostAPI.as_view(),
          name='create_post_api'),
 

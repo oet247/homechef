@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="PY-233.13135.95">
+  <component name="dataSourceStorageLocal" created-in="PY-231.9225.15">
     <data-source name="homechef@localhost" uuid="d34827e3-2cd5-48fd-8930-3d829e7843b4">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <secret-storage>forget</secret-storage>
       <schema-mapping />
     </data-source>
   </component>

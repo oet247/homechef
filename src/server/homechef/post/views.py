@@ -20,23 +20,16 @@ import base64
 
 
 class CreatePostAPI(CreateAPIView):
-    permission_classes = [AllowAny]
     serializer_class = CreatePostSerializer
-    # def post(self, request, *args, **kwargs):
-    #     data = request.data
-    #     try:
-    #         author = get_user_model().objects.get(pk=data.get('author'))
-    #     except get_user_model().DoesNotExist:
-    #         author = None
-    #     if author is not None:
-    #         serializer = CreatePostSerializer(data=request.data)
-    #         if serializer.is_valid():
-    #             post = serializer.save()
-    #             post.save()
-    #             return Response(status=status.HTTP_201_CREATED)
-    #         return Response(status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION, data=serializer.errors)
-    #     return Response(status=status.HTTP_404_NOT_FOUND,
-    #                     data={"error": "Invalid pk values"})
+
+    def post(self, request, *args, **kwargs):
+        author = request.user.id
+        serializer = CreatePostSerializer(data={'author': author, 'image': request.FILES["image"], 'caption': request.data.get("caption")})
+        if serializer.is_valid():
+            post = serializer.save()
+            post.save()
+            return Response(status=status.HTTP_201_CREATED)
+        return Response(status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION, data=serializer.errors)
 
 
 class GetPostAPI(RetrieveAPIView):
@@ -45,8 +38,13 @@ class GetPostAPI(RetrieveAPIView):
 
 
 class UpdatePostAPI(UpdateAPIView):
-    serializer_class = PostSerializer
-    queryset = Post.objects.all()
+    def patch(self, request, *args, **kwargs):
+        post = Post.objects.get(pk=kwargs['pk'])
+        serializer = PostSerializer(post, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 class DeletePostAPI(DestroyAPIView):
@@ -57,7 +55,7 @@ class DeletePostAPI(DestroyAPIView):
 class LikePostAPI(APIView):
     def get(self, request, *args, **kwargs):
         try:
-            user = get_user_model().objects.get(pk=kwargs['req_user_pk'])
+            user = request.user
         except get_user_model().DoesNotExist:
             user = None
         try:
@@ -77,7 +75,7 @@ class LikePostAPI(APIView):
 class SavePostAPI(APIView):
     def get(self, request, *args, **kwargs):
         try:
-            user = get_user_model().objects.get(pk=kwargs['req_user_pk'])
+            user = request.user
         except get_user_model().DoesNotExist:
             user = None
         try:
