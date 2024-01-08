@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import "./Login.css"
+import './universalFormStyle.css'
 
 export const Login = () => {
   const [username, setUsername] = useState('');
@@ -16,7 +16,7 @@ export const Login = () => {
     };
 
     try {
-      const { data } = await axios.post('http://localhost:8000/user/login/', user, {
+      const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/user/login/`, user, {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -35,15 +35,22 @@ export const Login = () => {
   }
 
   return (
-    <div className="auth-form-container">
-      <form className="auth-form" onSubmit={handleSubmit}>
-        <div className="auth-form-content">
-          <h3 className="auth-form-title">Sign In</h3>
-          {error && <p className="error">{error}</p>}
-          <div className="form-group mt-3">
+    <div className="wrapper">
+      <div className="logoAndMoto">
+        <div>
+        <img className="logo" src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="logo" width={500} height={187}/>
+        </div>
+        <div className="moto"><p>The ultimate kitchen hack.</p></div>
+      </div>
+      <div className="form-container">
+      <form className="form" onSubmit={handleSubmit}>
+        <div className="form-content">
+          <h3 className="form-title">Sign In</h3>
+          <p className={`error ${error ? 'visible' : 'hidden'}`}>{error}</p>
+          <div className="form-group">
             <label htmlFor="username">Username</label>
             <input
-              className="form-control mt-1"
+              className="form-control"
               placeholder="Enter Username"
               name="username"
               type="text"
@@ -52,23 +59,25 @@ export const Login = () => {
               required
             />
           </div>
-          <div className="form-group mt-3">
+          <div className="form-group">
             <label htmlFor="password">Password</label>
             <input
               name="password"
               type="password"
-              className="form-control mt-1"
+              className="form-control"
               placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">Submit</button>
+          <div className="form-group">
+            <button type="submit" className="btn">Submit</button>
           </div>
         </div>
       </form>
+      </div> 
     </div>
+    
   );
 }
