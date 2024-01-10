@@ -5,8 +5,6 @@ import { useUserId } from './customhooks/userIDHook';
 export const ProfilePage = () => {
   const [full_name, setFullName] = useState('');
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [bio, setBio] = useState('');
   const [birthday, setBirthday] = useState('');
 
@@ -16,15 +14,19 @@ export const ProfilePage = () => {
     const fetchData = async () => {
 
       try {
-        const response = await axios.get(`http://localhost:8000/user/${userId}`);
+        const response = await axios.get(`http://localhost:8000/user/${userId}`,
+        {
+            headers: {
+            'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+          }
+        }
+        )
 
         const profileData = response.data;
 
         if (profileData) {
           setFullName(profileData.full_name);
           setUsername(profileData.username);
-          setEmail(profileData.email);
-          setPassword(profileData.password);
           setBio(profileData.bio);
           setBirthday(profileData.birthday);
         } else {
@@ -44,8 +46,6 @@ export const ProfilePage = () => {
       <div>
         <p>Full Name: {full_name}</p>
         <p>Username: {username}</p>
-        <p>Email: {email}</p>
-        <p>Password: {password}</p>
         <p>Bio: {bio}</p>
         <p>Birthday: {birthday}</p>
       </div>
