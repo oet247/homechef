@@ -16,7 +16,7 @@ export const Login = () => {
     };
 
     try {
-      const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/user/login/`, user, {
+      const { data } = await axios.post(`http://localhost:8000/user/login/`, user, {
         headers: {
           'Content-Type': 'application/json'
         },

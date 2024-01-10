@@ -47,7 +47,7 @@ export const AdditionalInfo = () => {
 
         try {
             const response = await axios.put(
-                `${process.env.REACT_APP_API_URL}/user/update/${userId}`,
+                `http://localhost:8000/user/update/${userId}`,
                 {
                     full_name: full_name,
                     bio: bio,

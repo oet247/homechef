@@ -21,7 +21,7 @@ const HomeComponent = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `${process.env.REACT_APP_API_URL}/user/${userId}`,
+          `http://localhost:8000/user/${userId}`,
           {
             headers: {
               'Authorization': `Bearer ${localStorage.getItem('access_token')}`
