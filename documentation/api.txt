@@ -1,5 +1,10 @@
-## Documentation
-## /user
+
+## Endpoint documentation
+
+Tuk sa dokumentirani vsichkite endpointove, tehniq request method, url structure, request body i response
+Na vseki endpoint s -Auth header trqbva da se prati jwt bearer access type token
+
+### /user
 
 - /user/login/ 
 	- POST
@@ -20,7 +25,13 @@
 
 - /user/login/refresh
 	- POST
-	- refreshva jwt token i vrushta nov access pair
+	- refreshva jwt token
+```json
+{
+"refresh": ""
+	}
+```
+- vrushta nov access-refresh pair
 ```json
 {
 "access": "",
@@ -28,9 +39,14 @@
 }
 ```
 
-- /user/logout/ - **TODO**
-	- GET
-	- logoutva user ako e loginnat
+- /user/logout/ 
+	- POST
+	- logoutva user ako e loginnat kato mu blacklistva resfresh tokena (efektivno usera vse oshte ima access token no za kratko vreme)
+```json
+{
+"refresh": ""
+}
+```
 
 - /user/create
 	- POST 
@@ -45,55 +61,83 @@
 
 - /user/:id
 	- GET
-	- Vrushta user
+	- Auth header
+	- Vrushta public user info po id
+```json
+{
+  "full_name": "",
+  "username": "",
+  "bio": "",
+  "profile_pic": ,
+  "followers": [],
+  "following": [],
+  "followers_count": ,
+  "follwowing_count": ,
+  "posts": [],
+  "post_count": ,
+}
+```
+
+- /user/me/
+	- GET
+	- Auth header
+	- Vrushta cqloto info na lognat user samo na nego
 ```json
 {
   "full_name": "",
   "username": "",
   "email": "",
-  "password": "",
   "bio": "",
-  "birthday": "",
   "profile_pic": ,
+  "birthday": ,
   "followers": [],
   "following": [],
-  "is_staff": false,
-  "is_superuser": false,
   "followers_count": ,
   "follwowing_count": ,
   "posts": [],
   "post_count": ,
-  "saved_posts": []
+  "likes": [],
+  "likes count": ,
+  "saved_posts": []
 }
 ```
 
-- /user/update/:id - **TODO**
-	- PUT
+- /user/update/:id 
+	- PATCH
+	- Auth header
 	- updateva user
-
-- /user/delete/:id - **TODO**
-	- DELETE
-	- deleteva user
-
-- /user/follow/ - **TODO**
-	- POST
-	- pravi user da followva drug user
-	- potencialen implementation - 
+	- requesta trqbva da promeni pone edno ot dadenite poleta
 ```json
 {
-//funnny way to name a person getting followed btw
-"folowee": //id
+  "full_name": "",
+  "username": "",
+  "bio": "",
+  "birthday":
+  "profile_pic": ,
 }
 ```
+
+- /user/delete/:id - 
+	- DELETE
+	- Auth header
+	- deleteva user po id, potencialno moga da go promenq da iziskva username i parola za da trie nz oshte
+
+- /user/follow/\<id na usera koito iskame da bude follownat\> 
+	- GET
+	- Auth header
+	- pravi user da followva drug user ako ne go followva veche i da go unfollowne ako veche go followva
+
 - /user/feed/
 	- GET
+	- Auth header
 	- vrushta feed s vsichki postove na useri koito user sledva i gi podrejda po ordered
-	- ne znam kakuv json vrushta trqbva da vidq XD
+	- 
 
-## /post
+### /post
 
 - /post/:id
 	- GET
+	- Auth header
 	- Vrushta post po id
 ```json
 {
@@ -106,7 +150,6 @@
 "posted_time": "",
 "caption": "",
 "likes": [],
-"saves": []
 "comments": [],
 "likes_count": ,
 }
@@ -114,45 +157,45 @@
 
 - /post/create
 	- POST
-	- pravi post
+	- Auth header
+	- pravi post s avtor usera koito sendva requesta
 ```json
 {
-"author": ,
 "image": ,
 "caption": ""
 }
 ```
 
-- /post/update/:id - **TODO**
-	- PUT
-	- updateva post
+- /post/update/:id 
+	- PATCH
+	- Auth header
+	- requesta trqbva da promeni pone edno ot dadenite poleta
+```json
+{
+"image": ,
+"caption": ""
+}
+```
 
-- /post/delete/:id - **TODO**
+- /post/delete/\<id na posta\>
 	- DELETE
-	- trie post
+	- Auth header
+	- trie post po id
 
-- /post/like/:id - **TODO**
-	- POST
-	- pravi user da likene post
-	- potencialen implementation - usera e ot tokena post a drugoto e ot jsona
-```json
-{
-"post_id": 
-}
-```
+- /post/like/\<id na posta\>
+	- GET
+	- Auth header
+	- pravi user da likene post ako veche ne go e likenal i da go unlikene ako go e likenal
 
-- /post/save/:id
-	- POST
+
+- /post/save/\<id na posta\>
+	- GET
+	- Auth header
 	- pravi user da dpbavi post kum savenati postove
-	- absolutno sushtoto kato gornoto kato logika
-	- potencialen implementation - usera e ot tokena post a drugoto e ot jsona
-```json
-{
-"post_id":
-}
-```
+	- Absolutno sushtoto kato gornoto
 
-## /comment
+
+### /comment
 
 - /comment/create
 	- POST
@@ -178,5 +221,6 @@
 ```
 
 - /comment/delete/:id - TODO
+- [ ] homechef comment delete [due:: 2023-12-10 ]
 	- DELETE
 	- trie post po id

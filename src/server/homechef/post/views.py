@@ -13,7 +13,7 @@ from rest_framework.generics import (  # CreateAPIView,
 from django.contrib.auth import get_user_model
 
 # Local Imports
-from post.serializers import PostSerializer, CreatePostSerializer
+from post.serializers import PostSerializer, CreatePostSerializer, UpdatePostSerializer
 from post.models import Post
 
 import base64
@@ -40,7 +40,7 @@ class GetPostAPI(RetrieveAPIView):
 class UpdatePostAPI(UpdateAPIView):
     def patch(self, request, *args, **kwargs):
         post = Post.objects.get(pk=kwargs['pk'])
-        serializer = PostSerializer(post, data=request.data, partial=True)
+        serializer = UpdatePostSerializer(post, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

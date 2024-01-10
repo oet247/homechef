@@ -40,7 +40,25 @@ class UpdateCommentAPI(UpdateAPIView):
     serializer_class = CommentSerializer
     queryset = Comment.objects.all()
 
-
 class DeleteCommentAPI(DestroyAPIView):
     serializer_class = CommentSerializer
     queryset = Comment.objects.all()
+
+class LikeCommentAPI(APIView):
+    def get(self, request, *args, **kwargs):
+        try:
+            user = request.user
+        except get_user_model().DoesNotExist:
+            user = None
+        try:
+            comment = Comment.objects.get(pk=kwargs['comment_pk'])
+        except Post.DoesNotExist:
+            comment = None
+        if user is not None and comment is not None:
+            if user in comment.likes.all():
+                comment.likes.remove(user)
+            else:
+                comment.likes.add(user)
+            return Response(status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION,
+                        data={"error": "Invalid pk values"})

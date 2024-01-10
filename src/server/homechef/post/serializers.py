@@ -22,4 +22,10 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ['pk', 'author', 'image', 'caption',
-                  'likes', 'likes_count']
+                  'likes', 'likes_count', 'comments']
+
+
+class UpdatePostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ["image", "caption"]
