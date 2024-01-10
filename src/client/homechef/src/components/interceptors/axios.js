@@ -1,4 +1,8 @@
 import axios from "axios";
+import {jwtDecode} from "jwt-decode";
+import { EventEmitter } from "events";
+
+export const userIdEmitter = new EventEmitter();
 
 let refresh = false;
 
@@ -22,9 +26,15 @@ axios.interceptors.response.use(
       );
 
       if (response.status === 200) {
-        axios.defaults.headers.common['Authorization'] = `Bearer ${response.data['access']}`;
-        localStorage.setItem('access_token', response.data.access);
+        const token = response.data['access'];
+        const decoded = jwtDecode(token);
+        const userId = decoded.user_id;
+
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        localStorage.setItem('access_token', token);
         localStorage.setItem('refresh_token', response.data.refresh);
+
+        userIdEmitter.emit('userIdUpdated', userId);
         return axios(error.config);
       }
     }

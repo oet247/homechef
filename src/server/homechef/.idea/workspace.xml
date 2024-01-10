@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <list default="true" id="730eaa09-b818-458d-9a21-a25c6db08514" name="Changes" comment="Changes">
       <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/components/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/components/navigation.js" afterDir="false" />
+=======
+    <list default="true" id="730eaa09-b818-458d-9a21-a25c6db08514" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../client/homechef/src/components/profilepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../client/homechef/src/components/profilepage.js" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 =======
     <list default="true" id="730eaa09-b818-458d-9a21-a25c6db08514" name="Changes" comment="">
@@ -145,6 +152,7 @@
       <workItem from="1701884764074" duration="2419000" />
       <workItem from="1702321457797" duration="606000" />
       <workItem from="1702410435607" duration="731000" />
+<<<<<<< Updated upstream
       <workItem from="1702495848156" duration="690000" />
       <workItem from="1703430723863" duration="1781000" />
       <workItem from="1703433093323" duration="905000" />
@@ -156,6 +164,10 @@
       <workItem from="1702491429850" duration="4221000" />
       <workItem from="1703431027198" duration="659000" />
       <workItem from="1703673065466" duration="5683000" />
+>>>>>>> Stashed changes
+=======
+      <workItem from="1702495848156" duration="691000" />
+      <workItem from="1702584605341" duration="312000" />
 >>>>>>> Stashed changes
     </task>
     <servers />

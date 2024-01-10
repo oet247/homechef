@@ -1,8 +1,24 @@
+import { userIdEmitter } from "./interceptors/axios";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useUserId } from './customhooks/userIDHook';
 
 export const ProfilePage = () => {
+  const [userId, setUserId] = useState(null);
+
+  useEffect(() => {
+    const handleUserIdUpdate = (newUserId) => {
+      console.log(`User ID updated: ${newUserId}`);
+      setUserId(newUserId);
+    };
+
+    userIdEmitter.on('userIdUpdated', handleUserIdUpdate);
+
+    return () => {
+      userIdEmitter.off('userIdUpdated', handleUserIdUpdate);
+    };
+  }, []);
+
   const [full_name, setFullName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -14,12 +30,19 @@ export const ProfilePage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+<<<<<<< Updated upstream:src/client/homechef/src/components/profilepage.jsx
       try {
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/user/${userId}`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('access_token')}`
           }
         });
+=======
+      if (!userId) return;
+
+      try {
+        const response = await axios.get(`http://localhost:8000/user/${userId}`);
+>>>>>>> Stashed changes:src/client/homechef/src/components/profilepage.js
         const profileData = response.data;
 
         if (profileData) {
