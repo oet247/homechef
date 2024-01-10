@@ -1,4 +1,3 @@
-import { userIdEmitter } from "./interceptors/axios";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useUserId } from './customhooks/userIDHook';
