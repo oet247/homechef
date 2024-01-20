@@ -24,7 +24,7 @@ class CreatePostAPI(CreateAPIView):
 
     def post(self, request, *args, **kwargs):
         author = request.user.id
-        serializer = CreatePostSerializer(data={'author': author, 'image': request.FILES["image"], 'caption': request.data.get("caption")})
+        serializer = CreatePostSerializer(data={'author': author, 'image': request.FILES["image"], 'caption': request.data.get("caption"), 'content': request.data.get('content')})
         if serializer.is_valid():
             post = serializer.save()
             post.save()

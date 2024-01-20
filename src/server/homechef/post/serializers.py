@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 class CreatePostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ['author', 'image', 'caption']
+        fields = ['author', 'image', 'caption', 'content']
 
 
 class PostAuthorSerializer(serializers.ModelSerializer):
@@ -21,11 +21,11 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ['pk', 'author', 'image', 'caption',
+        fields = ['pk', 'author', 'image', 'caption', 'content'
                   'likes', 'likes_count', 'comments']
 
 
 class UpdatePostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ["image", "caption"]
+        fields = ["image", "caption", 'content']

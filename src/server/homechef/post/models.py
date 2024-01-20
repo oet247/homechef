@@ -14,6 +14,7 @@ class Post(models.Model):
                               default="post/post.png")
     posted_time = models.DateTimeField('Post_posted_time', auto_now_add=True)
     caption = models.CharField('Caption', max_length=50, blank=True)
+    content = models.CharField('Content', max_length=3000, default='')
     likes = models.ManyToManyField(settings.AUTH_USER_MODEL,
                                    related_name="Post_Likes",
                                    blank=True,
