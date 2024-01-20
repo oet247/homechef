@@ -149,6 +149,7 @@ Na vseki endpoint s -Auth header trqbva da se prati jwt bearer access type token
 "image": ,
 "posted_time": "",
 "caption": "",
+"content": "",
 "likes": [],
 "comments": [],
 "likes_count": ,
@@ -162,7 +163,8 @@ Na vseki endpoint s -Auth header trqbva da se prati jwt bearer access type token
 ```json
 {
 "image": ,
-"caption": ""
+"caption": "",
+"content": ""
 }
 ```
 
@@ -173,7 +175,8 @@ Na vseki endpoint s -Auth header trqbva da se prati jwt bearer access type token
 ```json
 {
 "image": ,
-"caption": ""
+"caption": "",
+"content": ""
 }
 ```
 
