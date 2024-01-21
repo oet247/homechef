@@ -127,11 +127,7 @@ Na vseki endpoint s -Auth header trqbva da se prati jwt bearer access type token
 	- Auth header
 	- pravi user da followva drug user ako ne go followva veche i da go unfollowne ako veche go followva
 
-- /user/feed/
-	- GET
-	- Auth header
-	- vrushta feed s vsichki postove na useri koito user sledva i gi podrejda po ordered
-	- 
+
 
 ### /post
 
@@ -196,6 +192,36 @@ Na vseki endpoint s -Auth header trqbva da se prati jwt bearer access type token
 	- Auth header
 	- pravi user da dpbavi post kum savenati postove
 	- Absolutno sushtoto kato gornoto
+	
+	
+	
+- /post/feed/
+	- GET
+	- Auth header
+	- vrushta feed s vsichki postove na useri koito user sledva 
+```json
+	[
+    {
+        "pk": ,
+        "author": {
+            "pk": ,
+            "username": "",
+            "profile_pic": 
+        },
+        "image": ,
+        "caption": ,
+        "content": "",
+        "likes": [
+            {
+                "pk": ,
+                "username": "",
+                "profile_pic": 
+            },
+        ],
+        "likes_count": 
+    }
+	]
+```
 
 
 ### /comment

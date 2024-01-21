@@ -1,4 +1,5 @@
 # Views and Responses
+from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
@@ -13,7 +14,7 @@ from rest_framework.generics import (  # CreateAPIView,
 from django.contrib.auth import get_user_model
 
 # Local Imports
-from post.serializers import PostSerializer, CreatePostSerializer, UpdatePostSerializer
+from post.serializers import PostSerializer, CreatePostSerializer, UpdatePostSerializer, PostFeedSerializer
 from post.models import Post
 
 import base64
@@ -90,3 +91,28 @@ class SavePostAPI(APIView):
             return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION,
                         data={"error": "Invalid pk values"})
+
+
+class FeedAPI(APIView):
+    def get(self, request, *args, **kwargs):
+        try:
+            user = request.user
+        except ObjectDoesNotExist:
+            user = None
+
+        if user is not None:
+            # Retrieve posts from people the user follows
+            following_posts = Post.objects.filter(author__in=user.following.all())
+
+            # Retrieve user's own posts
+            user_posts = Post.objects.filter(author=user)
+
+            # Combine the two querysets
+            queryset = following_posts | user_posts
+
+            serializer = PostFeedSerializer(queryset, many=True)
+
+            return Response(status=status.HTTP_200_OK, data=serializer.data)
+
+        return Response(status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION,
+                        data={"error": "Invalid credentials"})

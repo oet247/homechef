@@ -4,7 +4,8 @@ from post.views import (CreatePostAPI,
                         UpdatePostAPI,
                         DeletePostAPI,
                         LikePostAPI,
-                        SavePostAPI)
+                        SavePostAPI,
+                        FeedAPI)
 
 urlpatterns = [
 
@@ -31,5 +32,9 @@ urlpatterns = [
     path('save/<int:post_pk>/',
          SavePostAPI.as_view(),
          name='create_post_api'),
+
+    path('feed/',
+         FeedAPI.as_view(),
+         name='user_feed_api'),
 
 ]

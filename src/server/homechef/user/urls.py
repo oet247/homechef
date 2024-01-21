@@ -7,14 +7,10 @@ from user.views import (GetUserAPI,
                         UpdateUserAPI,
                         UploadUserPicAPI,
                         FollowUserAPI,
-                        FeedAPI, DeleteUserAPI, Test)
+                        DeleteUserAPI, Test)
 from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
-
-    path('feed/<int:req_user_pk>/',
-         FeedAPI.as_view(),
-         name='user_feed_api'),
 
     path('create/',
          CreateUserAPI.as_view(),

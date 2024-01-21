@@ -1,3 +1,4 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
 from rest_framework import status
 from rest_framework import permissions
@@ -16,6 +17,7 @@ from user.serializers import (CreateUserSerializer,
                               MyProfileSerializer,
                               UploadUserPicSerializer,
                               UpdateUserSerializer)
+from post.models import Post
 
 
 class CreateUserAPI(CreateAPIView):
@@ -79,23 +81,6 @@ class FollowUserAPI(APIView):
                 following_user.following.add(user_getting_followed)
             return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_404_NOT_FOUND)
-
-
-class FeedAPI(APIView):
-    def get(self, request, *args, **kwargs):
-        try:
-            user = get_user_model().objects.get(pk=kwargs['req_user_pk'])
-        except get_user_model().DoesNotExist:
-            user = None
-        if user is not None:
-            data = user.posts()
-            for following in user.following.all():
-                data = data | following.posts()
-            data = data.order_by('-posted_time')
-            serializer = PostSerializer(data, many=True)
-            return Response(status=status.HTTP_200_OK, data=serializer.data)
-        return Response(status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION,
-                        data={"error": "Invalid credentials"})
 
 
 class Test(APIView):
