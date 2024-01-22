@@ -25,12 +25,23 @@ class CreatePostAPI(CreateAPIView):
 
     def post(self, request, *args, **kwargs):
         author = request.user.id
-        serializer = CreatePostSerializer(data={'author': author, 'image': request.FILES["image"], 'caption': request.data.get("caption"), 'content': request.data.get('content')})
+
+        # Check if 'image' key exists in request.FILES
+        if 'image' not in request.FILES:
+            return Response({'error': 'Image key not found in request'}, status=status.HTTP_400_BAD_REQUEST)
+
+        serializer = CreatePostSerializer(data={
+            'author': author,
+            'image': request.FILES["image"],
+            'caption': request.data.get("caption"),
+            'content': request.data.get('content')
+        })
+
         if serializer.is_valid():
             post = serializer.save()
             post.save()
             return Response(status=status.HTTP_201_CREATED)
-        return Response(status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION, data=serializer.errors)
+        return Response(data=serializer.errors, status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
 
 
 class GetPostAPI(RetrieveAPIView):
