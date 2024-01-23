@@ -5,7 +5,7 @@ from comment.views import CreateCommentAPI, DeleteCommentAPI, UpdateCommentAPI, 
 urlpatterns = [
 
 
-    path('create/',
+    path('create/<int:post_pk>',
          CreateCommentAPI.as_view(),
          name='create_comment_api'),
 

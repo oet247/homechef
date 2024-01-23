@@ -51,7 +51,6 @@ class UserSerializer(serializers.ModelSerializer):
                   'following', 'following_count',
                   'posts', 'post_count']
 
-
 class MyProfileSerializer(serializers.ModelSerializer):
     followers = MiniUserSerializer(many=True)
     following = MiniUserSerializer(many=True)

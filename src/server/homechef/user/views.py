@@ -89,3 +89,10 @@ class Test(APIView):
         serializer = UserSerializer(user)
         return Response(serializer.data)
 
+class TestToken(APIView):
+    def get(self, request):
+        if request.user is not None:
+            return Response("token is valid")
+        else:
+            return Response("token isnt valid")
+

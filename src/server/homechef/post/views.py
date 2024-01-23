@@ -26,7 +26,6 @@ class CreatePostAPI(CreateAPIView):
     def post(self, request, *args, **kwargs):
         author = request.user.id
 
-        # Check if 'image' key exists in request.FILES
         if 'image' not in request.FILES:
             return Response({'error': 'Image key not found in request'}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -112,13 +111,9 @@ class FeedAPI(APIView):
             user = None
 
         if user is not None:
-            # Retrieve posts from people the user follows
             following_posts = Post.objects.filter(author__in=user.following.all())
-
-            # Retrieve user's own posts
             user_posts = Post.objects.filter(author=user)
 
-            # Combine the two querysets
             queryset = following_posts | user_posts
 
             serializer = PostFeedSerializer(queryset, many=True)

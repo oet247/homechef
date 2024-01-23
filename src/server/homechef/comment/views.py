@@ -14,20 +14,22 @@ from comment.serializers import CreateCommentSerializer, CommentSerializer
 
 class CreateCommentAPI(APIView):
     serializer_class = CommentSerializer
-    permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
-        data = request.data
         try:
-            author = get_user_model().objects.get(pk=data.get('author'))
+            author = request.user
         except get_user_model().DoesNotExist:
             author = None
         try:
-            post = Post.objects.get(pk=data.get('post'))
+            post = Post.objects.get(pk=kwargs['post_pk'])
         except Post.DoesNotExist:
             post = None
         if author is not None and post is not None:
-            serializer = CreateCommentSerializer(data=request.data)
+            serializer = CreateCommentSerializer(data={
+                'author': author.id,
+                'post': post.id,
+                'content': request.data.get('content')
+            })
             if serializer.is_valid():
                 comment = serializer.save()
                 comment.save()

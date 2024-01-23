@@ -10,15 +10,15 @@ class CreatePostSerializer(serializers.ModelSerializer):
         fields = ['author', 'image', 'caption', 'content']
 
 
-class PostAuthorSerializer(serializers.ModelSerializer):
+class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
         fields = ['pk', 'username', 'profile_pic']
 
 
 class PostFeedSerializer(serializers.ModelSerializer):
-    author = PostAuthorSerializer()
-    likes = PostAuthorSerializer(many=True)
+    author = AuthorSerializer()
+    likes = AuthorSerializer(many=True)
 
     class Meta:
         model = Post
@@ -27,8 +27,8 @@ class PostFeedSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    author = PostAuthorSerializer()
-    likes = PostAuthorSerializer(many=True)
+    author = AuthorSerializer()
+    likes = AuthorSerializer(many=True)
     comments = CommentSerializer(many=True)
 
     class Meta:

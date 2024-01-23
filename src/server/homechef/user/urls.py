@@ -7,7 +7,7 @@ from user.views import (GetUserAPI,
                         UpdateUserAPI,
                         UploadUserPicAPI,
                         FollowUserAPI,
-                        DeleteUserAPI, Test)
+                        DeleteUserAPI, Test, TestToken)
 from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
@@ -51,5 +51,8 @@ urlpatterns = [
          TokenBlacklistView.as_view(),
          name='token_blacklist'),
     path('test/', Test.as_view(),
-         name='test')
+         name='test'),
+    path('login/test',
+         TestToken.as_view(),
+         name='test_token')
 ]
