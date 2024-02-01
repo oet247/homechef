@@ -27,7 +27,7 @@ class MiniUserSerializer(serializers.ModelSerializer):
         fields = ['pk', 'username', 'full_name', 'profile_pic']
 
 
-class PostSerializer(serializers.ModelSerializer):
+class ProfilePostSerializer(serializers.ModelSerializer):
     author = MiniUserSerializer()
     likes = MiniUserSerializer(many=True)
 
@@ -41,7 +41,7 @@ class UserSerializer(serializers.ModelSerializer):
     followers = MiniUserSerializer(many=True)
     following = MiniUserSerializer(many=True)
 
-    posts = PostSerializer(many=True)
+    posts = ProfilePostSerializer(many=True)
 
     class Meta:
         model = get_user_model()
@@ -54,8 +54,8 @@ class UserSerializer(serializers.ModelSerializer):
 class MyProfileSerializer(serializers.ModelSerializer):
     followers = MiniUserSerializer(many=True)
     following = MiniUserSerializer(many=True)
-    posts = PostSerializer(many=True)
-    saved_posts = PostSerializer(many=True)
+    posts = ProfilePostSerializer(many=True)
+    saved_posts = ProfilePostSerializer(many=True)
 
     class Meta:
         model = get_user_model()

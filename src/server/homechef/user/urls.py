@@ -7,7 +7,7 @@ from user.views import (GetUserAPI,
                         UpdateUserAPI,
                         UploadUserPicAPI,
                         FollowUserAPI,
-                        DeleteUserAPI, Test, TestToken)
+                        DeleteUserAPI, TestToken)
 from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
@@ -47,11 +47,11 @@ urlpatterns = [
     path('login/refresh/',
          jwt_views.TokenRefreshView.as_view(),
          name='token_refresh'),
+
     path('logout/',
          TokenBlacklistView.as_view(),
          name='token_blacklist'),
-    path('test/', Test.as_view(),
-         name='test'),
+
     path('login/test',
          TestToken.as_view(),
          name='test_token')

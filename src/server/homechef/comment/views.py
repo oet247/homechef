@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from rest_framework.generics import CreateAPIView, DestroyAPIView, UpdateAPIView
+from rest_framework.generics import CreateAPIView, DestroyAPIView, UpdateAPIView, RetrieveAPIView
 from rest_framework.views import APIView
 
 # Django Tools
@@ -9,7 +9,7 @@ from django.contrib.auth import get_user_model
 
 from post.models import Post
 from comment.models import Comment
-from comment.serializers import CreateCommentSerializer, CommentSerializer
+from comment.serializers import CreateCommentSerializer, CommentSerializer, UpdateCommentSerializer
 
 
 class CreateCommentAPI(APIView):
@@ -39,8 +39,13 @@ class CreateCommentAPI(APIView):
                         data={"error": "Invalid pk values"})
 
 class UpdateCommentAPI(UpdateAPIView):
-    serializer_class = CommentSerializer
-    queryset = Comment.objects.all()
+    def patch(self, request, *args, **kwargs):
+        comment = Comment.objects.get(pk=kwargs['pk'])
+        serializer = UpdateCommentSerializer(comment, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
 
 class DeleteCommentAPI(DestroyAPIView):
     serializer_class = CommentSerializer
@@ -64,3 +69,7 @@ class LikeCommentAPI(APIView):
             return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION,
                         data={"error": "Invalid pk values"})
+
+class GetCommentAPI(RetrieveAPIView):
+    serializer_class = CommentSerializer
+    queryset = Comment.objects.all()

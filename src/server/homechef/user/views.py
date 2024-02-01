@@ -83,11 +83,6 @@ class FollowUserAPI(APIView):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
 
-class Test(APIView):
-    def get(self, request):
-        user = get_user_model().objects.get(id=self.request.user.id)
-        serializer = UserSerializer(user)
-        return Response(serializer.data)
 
 class TestToken(APIView):
     def get(self, request):
